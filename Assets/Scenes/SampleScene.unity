@@ -1101,13 +1101,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4061318036687563820, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
-<<<<<<< HEAD
-=======
       propertyPath: Delta
       value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 4061318036687563820, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
->>>>>>> 905d5a21d611ef39d2606eb3d0666baee6c7c294
       propertyPath: Target
       value: 
       objectReference: {fileID: 6391635}
@@ -1358,27 +1355,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 8922106902309976725, guid: 735dfc34805ba2abdbb999ce703a0b39, type: 3}
   FPSframe: {fileID: 1738184084}
-<<<<<<< HEAD
---- !u!114 &5583860780448548535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5583860780448548528}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69d0032c6c8a72d43812b806194a604c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ChainLength: 2
-  Target: {fileID: 0}
-  Pole: {fileID: 0}
-  Iterations: 10
-  Delta: 0.001
-  SnapBackStrength: 1
-=======
->>>>>>> 905d5a21d611ef39d2606eb3d0666baee6c7c294
 --- !u!54 &5583860780448548536 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 5583860781667643041, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
