@@ -212,7 +212,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6391631}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.765, z: 0.796}
+  m_LocalPosition: {x: -0, y: 0.872, z: 0.796}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -446,7 +446,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726036813}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69d0032c6c8a72d43812b806194a604c, type: 3}
   m_Name: 
@@ -927,8 +927,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140767beae93b4b538dc8836dc753f8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 320
-  height: 200
 --- !u!114 &1682819687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -941,9 +939,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7e9fcb795b84664bfc1ac40799a68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uberReplacementShader: {fileID: 0}
-  opticalFlowShader: {fileID: 0}
-  opticalFlowSensitivity: 1
 --- !u!1 &1738184083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,7 +1105,7 @@ PrefabInstance:
       objectReference: {fileID: 6391635}
     - target: {fileID: 4061318036687563820, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4061318036687563820, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
       propertyPath: Iterations
@@ -1128,12 +1123,24 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4723511204510496786, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
+      propertyPath: m_Mass
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723511204510496786, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumSlip
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5381109294704054788, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5407166874356410517, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583860780295799795, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumSlip
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5583860780295799804, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
@@ -1220,9 +1227,41 @@ PrefabInstance:
       propertyPath: m_SidewaysFriction.m_Stiffness
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5583860781672256752, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
+      propertyPath: m_ForwardFriction.m_ExtremumSlip
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583860781672256752, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumSlip
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5583860781672256753, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6616778418050774462, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
+      propertyPath: m_Mass
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6616778418050774462, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumSlip
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751752361334814870, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
+      propertyPath: m_Mass
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751752361334814870, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumSlip
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922937401287929787, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
+      propertyPath: m_Mass
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922937401287929787, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
+      propertyPath: m_SidewaysFriction.m_ExtremumSlip
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7217984991664107319, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
       propertyPath: m_RootOrder
@@ -1238,7 +1277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7504883263411008674, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.594
+      value: 0.792
       objectReference: {fileID: 0}
     - target: {fileID: 7504883263411008674, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1286,7 +1325,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5583860780448548528}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36cbac9ecaef5b842a305128aa2cbb71, type: 3}
   m_Name: 
