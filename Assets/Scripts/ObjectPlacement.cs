@@ -11,15 +11,18 @@ public class ObjectPlacement : MonoBehaviour
     public GameObject prefab;
     uint num_boxes;
     float[] depth;
-    float[] ymin_px;
-    float[] xmin_px;
-    float[] ymax_px;
-    float[] xmax_px;
+    float[] score;
+    uint[] ymin_px;
+    uint[] xmin_px;
+    uint[] ymax_px;
+    uint[] xmax_px;
     float width_img;
     float height_img;
     string[] object_type;
     float mass = 1f;
     float alfa = 0f;
+
+    bool coll = true;
 
 
     private Rigidbody cub;
@@ -40,17 +43,25 @@ public class ObjectPlacement : MonoBehaviour
 
     void Obj_callback(UnityScene data)
     {
-        Debug.Log("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
+        Debug.Log("Entered callback function!");
         depth = data.depth;
+        score = data.score;
         object_type = data.@object;
+        // int i = 0;
+        // foreach (String item in data.@object)
+        // {
+        // object_type[i] = item;
+        // i++;
+        // }
+        num_boxes = data.num_boxes;
+        width_img = data.width;
+        height_img = data.height;
+
+        ymin_px = data.ymin_px;
+        xmin_px = data.xmin_px;
+        ymax_px = data.ymax_px;
+        xmax_px = data.xmax_px;
         
-        // num_boxes = data.num_boxes;
-        // width_img = data.width;
-        // height_img = data.height;
-        // ymin_px = data.ymin_px;
-        // xmin_px = data.xmin_px;
-        // ymax_px = data.ymax_px;
-        // xmax_px = data.xmax_px;
 
     }
 
@@ -58,27 +69,48 @@ public class ObjectPlacement : MonoBehaviour
     void Update()
     {
         foreach (String item in object_type)
-        {
-            Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-            if (item == "tv")
+        {   
+            var index = Array.FindIndex(object_type, row => row.Contains(item));
+            float DeptH = 0.1f*depth[index];
+            alfa = FPSframe.transform.eulerAngles[1];
+            Vector3 posit = new Vector3(FPSframe.transform.position[0]+Mathf.Sin(Mathf.PI/180*alfa)*(DeptH), 
+                                        FPSframe.transform.position[1], 
+                                        FPSframe.transform.position[2]+Mathf.Cos(Mathf.PI/180*alfa)*(DeptH));
+
+            bool isObjectHere()
             {   
-                var index = Array.FindIndex(object_type, row => row.Contains(item));
-                float depth_bottle = depth[index];
-               // Spawn bottle/cylinder 
-                alfa = FPSframe.transform.eulerAngles[1];
-                print("alfa:"+alfa);
-                GameObject cyl = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-                cyl.transform.position = new Vector3(FPSframe.transform.position[0]+Mathf.Sin(Mathf.PI/180*alfa)*(depth_bottle), 
-                FPSframe.transform.position[1], 
-                FPSframe.transform.position[2]+Mathf.Cos(Mathf.PI/180*alfa)*(depth_bottle));
-                cyl.transform.rotation = FPSframe.transform.rotation;
-                cyl.transform.localScale = new Vector3(0.2f, 0.5f, 0.2f);
-                cyl.name = "Cyl"+nextCylNumber;
-                nextCylNumber++;
-                cyl.AddComponent<Rigidbody>();
-                cyli = cyl.GetComponent<Rigidbody>();
-                cyli.mass = mass;
-                cyl.AddComponent<OdometryPub2>();
+                
+                Collider[] intersecting = Physics.OverlapSphere(posit, 0.01f);
+                if (intersecting.Length != 0)
+                { // if there's intersection
+                    return false;
+                }
+                else
+                { // there's no intersection
+                    return true;
+                }
+            }
+            if (item == "cup")
+            {   
+                
+                coll = isObjectHere();
+                if (coll) {
+                    //code to run if nothing is intersecting as the length is 0
+                    // Spawn bottle/cylinder 
+                     
+                     GameObject cyl = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+                     cyl.transform.position = posit;
+                     cyl.transform.rotation = FPSframe.transform.rotation;
+                     cyl.transform.localScale = new Vector3(0.2f, 0.5f, 0.2f);
+                     cyl.name = "Cyl"+nextCylNumber;
+                     nextCylNumber++;
+                     cyl.AddComponent<Rigidbody>();
+                     cyli = cyl.GetComponent<Rigidbody>();
+                     cyli.mass = mass;
+                     cyl.AddComponent<OdometryPub2>();
+                } else {
+                    //code to run if something is intersecting it
+                }
             }
         }
         // // Press to create cube
