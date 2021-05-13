@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pose = RosMessageTypes.Geometry.Pose;
 using RosMessageTypes.RoboticsDemo;
+
 public class ObjectPlacement : MonoBehaviour
 {
 
@@ -39,7 +40,7 @@ public class ObjectPlacement : MonoBehaviour
 
     void Obj_callback(UnityScene data)
     {
-
+        Debug.Log("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
         depth = data.depth;
         object_type = data.@object;
         
@@ -58,7 +59,8 @@ public class ObjectPlacement : MonoBehaviour
     {
         foreach (String item in object_type)
         {
-            if (item == "bottle")
+            Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            if (item == "tv")
             {   
                 var index = Array.FindIndex(object_type, row => row.Contains(item));
                 float depth_bottle = depth[index];

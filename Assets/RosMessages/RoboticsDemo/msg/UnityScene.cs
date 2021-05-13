@@ -14,10 +14,10 @@ namespace RosMessageTypes.RoboticsDemo
 
         public Header header;
         public uint num_boxes;
-        public float[] ymin_px;
-        public float[] xmin_px;
-        public float[] ymax_px;
-        public float[] xmax_px;
+        public uint[] ymin_px;
+        public uint[] xmin_px;
+        public uint[] ymax_px;
+        public uint[] xmax_px;
         public string[] @object;
         public float[] score;
         public float[] depth;
@@ -28,10 +28,10 @@ namespace RosMessageTypes.RoboticsDemo
         {
             this.header = new Header();
             this.num_boxes = 0;
-            this.ymin_px = new float[0];
-            this.xmin_px = new float[0];
-            this.ymax_px = new float[0];
-            this.xmax_px = new float[0];
+            this.ymin_px = new uint[0];
+            this.xmin_px = new uint[0];
+            this.ymax_px = new uint[0];
+            this.xmax_px = new uint[0];
             this.@object = new string[0];
             this.score = new float[0];
             this.depth = new float[0];
@@ -39,7 +39,7 @@ namespace RosMessageTypes.RoboticsDemo
             this.width = 0.0f;
         }
 
-        public UnityScene(Header header, uint num_boxes, float[] ymin_px, float[] xmin_px, float[] ymax_px, float[] xmax_px, string[] @object, float[] score, float[] depth, float height, float width)
+        public UnityScene(Header header, uint num_boxes, uint[] ymin_px, uint[] xmin_px, uint[] ymax_px, uint[] xmax_px, string[] @object, float[] score, float[] depth, float height, float width)
         {
             this.header = header;
             this.num_boxes = num_boxes;
@@ -100,37 +100,37 @@ namespace RosMessageTypes.RoboticsDemo
             
             var ymin_pxArrayLength = DeserializeLength(data, offset);
             offset += 4;
-            this.ymin_px= new float[ymin_pxArrayLength];
+            this.ymin_px= new uint[ymin_pxArrayLength];
             for(var i = 0; i < ymin_pxArrayLength; i++)
             {
-                this.ymin_px[i] = BitConverter.ToSingle(data, offset);
+                this.ymin_px[i] = BitConverter.ToUInt32(data, offset);
                 offset += 4;
             }
             
             var xmin_pxArrayLength = DeserializeLength(data, offset);
             offset += 4;
-            this.xmin_px= new float[xmin_pxArrayLength];
+            this.xmin_px= new uint[xmin_pxArrayLength];
             for(var i = 0; i < xmin_pxArrayLength; i++)
             {
-                this.xmin_px[i] = BitConverter.ToSingle(data, offset);
+                this.xmin_px[i] = BitConverter.ToUInt32(data, offset);
                 offset += 4;
             }
             
             var ymax_pxArrayLength = DeserializeLength(data, offset);
             offset += 4;
-            this.ymax_px= new float[ymax_pxArrayLength];
+            this.ymax_px= new uint[ymax_pxArrayLength];
             for(var i = 0; i < ymax_pxArrayLength; i++)
             {
-                this.ymax_px[i] = BitConverter.ToSingle(data, offset);
+                this.ymax_px[i] = BitConverter.ToUInt32(data, offset);
                 offset += 4;
             }
             
             var xmax_pxArrayLength = DeserializeLength(data, offset);
             offset += 4;
-            this.xmax_px= new float[xmax_pxArrayLength];
+            this.xmax_px= new uint[xmax_pxArrayLength];
             for(var i = 0; i < xmax_pxArrayLength; i++)
             {
-                this.xmax_px[i] = BitConverter.ToSingle(data, offset);
+                this.xmax_px[i] = BitConverter.ToUInt32(data, offset);
                 offset += 4;
             }
             

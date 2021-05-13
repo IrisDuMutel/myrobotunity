@@ -46,7 +46,7 @@ public class RFHandTransform : MonoBehaviour
         // Orientation
 
         var rot = _transf.rotation;
-        Debug.Log(rot);
+        // Debug.Log(rot);
         orient = new Quaternion(-1f*rot.x,-1f*rot.z,-1f*rot.y,rot.w);
 
         // Position

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -212,7 +212,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6391631}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.872, z: 0.796}
+  m_LocalPosition: {x: -0, y: 1.36, z: 0.796}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1166,6 +1166,14 @@ PrefabInstance:
       value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 4723511204510496786, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
+      propertyPath: m_SuspensionSpring.damper
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723511204510496786, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
+      propertyPath: m_SuspensionSpring.spring
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723511204510496786, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
       propertyPath: m_SidewaysFriction.m_ExtremumSlip
       value: 0.1
       objectReference: {fileID: 0}
@@ -1338,6 +1346,14 @@ PrefabInstance:
       value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 6616778418050774462, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
+      propertyPath: m_SuspensionSpring.damper
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6616778418050774462, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
+      propertyPath: m_SuspensionSpring.spring
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 6616778418050774462, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
       propertyPath: m_SidewaysFriction.m_ExtremumSlip
       value: 0.1
       objectReference: {fileID: 0}
@@ -1356,6 +1372,14 @@ PrefabInstance:
     - target: {fileID: 6751752361334814870, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
       propertyPath: m_Mass
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751752361334814870, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
+      propertyPath: m_SuspensionSpring.damper
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751752361334814870, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
+      propertyPath: m_SuspensionSpring.spring
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 6751752361334814870, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
       propertyPath: m_SidewaysFriction.m_ExtremumSlip
@@ -1376,6 +1400,14 @@ PrefabInstance:
     - target: {fileID: 6922937401287929787, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
       propertyPath: m_Mass
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922937401287929787, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
+      propertyPath: m_SuspensionSpring.damper
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6922937401287929787, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
+      propertyPath: m_SuspensionSpring.spring
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 6922937401287929787, guid: aeb2de57972715e81a6cfcce2614905e, type: 3}
       propertyPath: m_SidewaysFriction.m_ExtremumSlip
