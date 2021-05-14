@@ -552,6 +552,7 @@ GameObject:
   - component: {fileID: 741303040}
   - component: {fileID: 741303044}
   - component: {fileID: 741303045}
+  - component: {fileID: 741303046}
   m_Layer: 0
   m_Name: myrobot2
   m_TagString: Untagged
@@ -655,6 +656,24 @@ MonoBehaviour:
   cube: {fileID: 963807922}
   RFtrans: {fileID: 254447506}
   publishMessageFrequency: 0.5
+--- !u!114 &741303046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741303039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df32070e6c84fc0d8b5bfc6bf49d7947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 741303042}
+  leftWheelW: {fileID: 1273485913}
+  rightWheelW: {fileID: 1112565075}
+  leftWheelT: {fileID: 1749802619}
+  rightWheelT: {fileID: 444558576}
+  RHtransformer: {fileID: 254447506}
 --- !u!4 &914305456 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b808638d4062ca63897aca296de57fda, type: 3}
