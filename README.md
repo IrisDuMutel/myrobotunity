@@ -56,5 +56,5 @@ For further information, go to 'https://github.com/Unity-Technologies/Unity-Robo
 
 
 General view of the scene:
-![alt text](hhttps://github.com/IrisDuMutel/myrobotunity/blob/mydreams/Screenshot%20from%202021-05-14%2017-23-46.png)
+![alt text](hhttps://github.com/IrisDuMutel/myrobotunity/blob/mydreams/Screenshot%20from%202021-05-14%2017-23-46.png?raw=true)
 
