@@ -11,31 +11,17 @@ public class RFHandTransform : MonoBehaviour
     private Vector3 ang_vel;
 
     
-    // public Transform _flMotor;
-    // public Transform _rlMotor;
-    // public Transform _frMotor;
-    // public Transform _rrMotor;
-
-    // public RFHandTransform(Transform transform, Rigidbody rigidB)
-    // {
-    //    _transf = transform;
-    //    _rigidB = rigidB;
-    // }
+// THIS SCRIPT HAS BEEN TRANSFORMED TO BE USED WITH THE FOLLOWING CONVENTION:
+//      * Z IS THE AXIS POINTING FORWARD --> BECOMES MATLAB'S X AXIS
+//      * X POINT TO THE RIGHT           --> BECOMES MATLAB'S -Y AXIS
+//      * Y POINTS UPWARDS               --> BECOMES MATLAB'S Z AXIS
     public void Right2Left(Transform _transform, Rigidbody _rb , Vector3 pos, Quaternion rot, Vector3 vel, Vector3 ang)
     {
         // // Orientation
-        _transform.rotation = new Quaternion(-rot[1],-rot[3],-rot[2],rot[0]);
+        _transform.rotation = new Quaternion(-rot[3],-rot[1],-rot[2],rot[0]);
 
         // Position
-        _transform.position = new Vector3(pos[0],pos[2],pos[1]);
-
-        // // Velocity lin
-        // var vel = _rb.velocity;
-        // _rb.velocity = new Vector3(vel[0],vel[2],vel[1]);
-
-        // // Velocity ang
-        // var ang = _rb.angularVelocity;
-        // _rb.angularVelocity = new Vector3(-1f*ang[0],-1f*ang[2],-1f*ang[1]);
+        _transform.position = new Vector3(pos[2],-pos[0],pos[1]);
 
     }
 
@@ -44,28 +30,27 @@ public class RFHandTransform : MonoBehaviour
         
         
         // Orientation
-
         var rot = _transf.rotation;
-        // Debug.Log(rot);
-        orient = new Quaternion(-1f*rot.x,-1f*rot.z,-1f*rot.y,rot.w);
+        orient = new Quaternion(-1f*rot.z,-1f*rot.x,-1f*rot.y,rot.w);
 
         // Position
         var pos = _transf.position;
-        posit = new Vector3(pos[0],pos[2],pos[1]);
+        posit = new Vector3(pos[2],-pos[0],pos[1]);
 
         // Velocity lin
-        // var vel = _rigidB.velocity;
-        lin_vel = new Vector3(inert_linvel[0],inert_linvel[2],inert_linvel[1]);
+        lin_vel = new Vector3(inert_linvel[2],-inert_linvel[0],inert_linvel[1]);
 
         // Velocity ang
         var ang = _rigidB.angularVelocity;
-        ang_vel = new Vector3(-1f*ang[0],-1f*ang[2],-1f*ang[1]);
+        ang_vel = new Vector3(-1f*ang[2],-1f*ang[0],-1f*ang[1]);
 
         return (orient,posit,lin_vel,ang_vel);
     }
 
-    public void ForceOnLeft(Transform _transform, Rigidbody _rb , Vector4 forces, float yaw)
+    public void VelocityOnLeft(Rigidbody _rb, float vel_x,float vel_y, float ang_z)
     {
+        _rb.velocity = new Vector3(-vel_y, 0, vel_x);
+        _rb.angularVelocity = new Vector3(0,-ang_z,0);
         // // Orientation
         // _transform.rotation = new Quaternion(-rot[1],-rot[3],-rot[2],rot[0]);
 
