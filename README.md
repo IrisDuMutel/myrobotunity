@@ -54,3 +54,7 @@ Create a *config* folder and inside, create a *params.yaml* empty file and write
   
 For further information, go to 'https://github.com/Unity-Technologies/Unity-Robotics-Hub/tree/dev'
 
+
+General view of the scene:
+![alt text](hhttps://github.com/IrisDuMutel/myrobotunity/blob/mydreams/Screenshot%20from%202021-05-14%2017-23-46.png)
+
