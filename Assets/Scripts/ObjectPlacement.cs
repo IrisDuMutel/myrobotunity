@@ -27,7 +27,7 @@ public class ObjectPlacement : MonoBehaviour
 
     private Rigidbody cub;
 
-    private Rigidbody cyli;
+    private Rigidbody cuppp;
     public Transform FPSframe;
     //public float groundDistance = 0.4f;
     //public LayerMask groundMask;
@@ -71,7 +71,7 @@ public class ObjectPlacement : MonoBehaviour
         foreach (String item in object_type)
         {   
             var index = Array.FindIndex(object_type, row => row.Contains(item));
-            float DeptH = 0.1f*depth[index];
+            float DeptH = 0.01f*depth[index];
             alfa = FPSframe.transform.eulerAngles[1];
             Vector3 posit = new Vector3(FPSframe.transform.position[0]+Mathf.Sin(Mathf.PI/180*alfa)*(DeptH), 
                                         FPSframe.transform.position[1], 
@@ -80,7 +80,7 @@ public class ObjectPlacement : MonoBehaviour
             bool isObjectHere()
             {   
                 
-                Collider[] intersecting = Physics.OverlapSphere(posit, 0.01f);
+                Collider[] intersecting = Physics.OverlapSphere(posit, 0.1f);
                 if (intersecting.Length != 0)
                 { // if there's intersection
                     return false;
@@ -98,16 +98,24 @@ public class ObjectPlacement : MonoBehaviour
                     //code to run if nothing is intersecting as the length is 0
                     // Spawn bottle/cylinder 
                      
-                     GameObject cyl = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-                     cyl.transform.position = posit;
-                     cyl.transform.rotation = FPSframe.transform.rotation;
-                     cyl.transform.localScale = new Vector3(0.2f, 0.5f, 0.2f);
-                     cyl.name = "Cyl"+nextCylNumber;
-                     nextCylNumber++;
-                     cyl.AddComponent<Rigidbody>();
-                     cyli = cyl.GetComponent<Rigidbody>();
-                     cyli.mass = mass;
-                     cyl.AddComponent<OdometryPub2>();
+                    //  GameObject cyl = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+                    //  cyl.transform.position = posit;
+                    //  cyl.transform.rotation = FPSframe.transform.rotation;
+                    //  cyl.transform.localScale = new Vector3(0.2f, 0.5f, 0.2f);
+                    //  cyl.name = "Cyl"+nextCylNumber;
+                    //  nextCylNumber++;
+                    //  cyl.AddComponent<Rigidbody>();
+                    //  cyli = cyl.GetComponent<Rigidbody>();
+                    GameObject cupp = GameObject.Instantiate(prefab,posit,
+                    // Quaternion.identity,
+                    FPSframe.transform.rotation);
+                    cupp.name = "RedCube"+nextRedNumber;
+                    nextRedNumber++;
+                    cupp.AddComponent<BoxCollider>();
+                    // cupp.AddComponent<Rigidbody>();
+                    // cuppp = cupp.GetComponent<Rigidbody>();
+                    // cuppp.mass = mass;
+                    cupp.AddComponent<OdometryPub2>();
                 } else {
                     //code to run if something is intersecting it
                 }
