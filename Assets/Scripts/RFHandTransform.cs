@@ -47,13 +47,17 @@ public class RFHandTransform : MonoBehaviour
         return (orient,posit,lin_vel,ang_vel);
     }
 
-    public void VelocityOnLeft(Rigidbody _rb, float vel_x,float vel_y, float ang_z)
+    public void VelocityOnLeft(Rigidbody _rb, Transform _tr, float vel_x,float vel_y, float ang_z)
     {
-        _rb.velocity = new Vector3(-vel_y, 0, vel_x);
-        _rb.angularVelocity = new Vector3(0,-ang_z,0);
+        _rb.velocity = new Vector3(-vel_y, 0.0f, vel_x);
+        _rb.angularVelocity = new Vector3(0.0f,-ang_z,0.0f);
         // // Orientation
         // _transform.rotation = new Quaternion(-rot[1],-rot[3],-rot[2],rot[0]);
 
+
+        // IN CASE YOU NEED TO FIX THE TRANSFORM
+        // _tr.eulerAngles = new Vector3(0.0f,ang_z,0.0f);
+        _tr.position = new Vector3(_tr.position.x,0.5f,_tr.position.z);
         // // Position
         // _transform.position = new Vector3(pos[0],pos[2],pos[1]);
 

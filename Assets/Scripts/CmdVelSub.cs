@@ -11,6 +11,7 @@ public class CmdVelSub : MonoBehaviour
     private float cmdvel_left;
     private float cmdvel_right;
     public Rigidbody rb;
+    public Transform _tr;
     public WheelCollider leftWheelW;
     public WheelCollider rightWheelW;
     public Transform leftWheelT;
@@ -89,7 +90,7 @@ public class CmdVelSub : MonoBehaviour
 
     private void FixedUpdate()
     {
-        RHtransformer.VelocityOnLeft(rb, vel_x, vel_y, ang_z);
+        RHtransformer.VelocityOnLeft(rb,_tr, vel_x, vel_y, ang_z);
 
         
         UpdateWheelPoses();

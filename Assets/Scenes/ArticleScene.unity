@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44658828, g: 0.49642313, b: 0.57482547, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 926559432}
   - component: {fileID: 926559430}
   - component: {fileID: 926559433}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 967899564}
   - component: {fileID: 967899563}
   - component: {fileID: 967899562}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -643,7 +643,7 @@ GameObject:
   - component: {fileID: 1344159880}
   - component: {fileID: 1344159882}
   - component: {fileID: 1344159881}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -666,7 +666,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -15, y: 348}
+  m_AnchoredPosition: {x: -15, y: 548}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1344159881
@@ -714,6 +714,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 437262794975895658, guid: e3c7f958eb7ddea6f802cd45b6b3d769, type: 3}
+      propertyPath: m_Mass
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 437262795138916192, guid: e3c7f958eb7ddea6f802cd45b6b3d769, type: 3}
+      propertyPath: m_Mass
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 437262796716038348, guid: e3c7f958eb7ddea6f802cd45b6b3d769, type: 3}
       propertyPath: m_Name
       value: myrobot2
@@ -762,6 +770,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 437262796716038453, guid: e3c7f958eb7ddea6f802cd45b6b3d769, type: 3}
+      propertyPath: _tr
+      value: 
+      objectReference: {fileID: 741303043}
     - target: {fileID: 437262796716038453, guid: e3c7f958eb7ddea6f802cd45b6b3d769, type: 3}
       propertyPath: RHtransformer
       value: 
