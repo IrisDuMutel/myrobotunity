@@ -22,6 +22,7 @@ public class CmdVelSub : MonoBehaviour
     private float ang_x;
     private float ang_y;
     private float ang_z;
+    public float tolerance = 0.1f;
     public RFHandTransform RHtransformer;
     void Start()
     {
@@ -38,6 +39,23 @@ public class CmdVelSub : MonoBehaviour
        ang_y = (float)data.angular.y;
        ang_z = (float)data.angular.z;
 
+       cmdvel_left = vel_x;
+       cmdvel_right = vel_y;
+       RHtransformer.VelocityOnLeft(rb,_tr, vel_x, vel_y, ang_z);
+        // // velocity comparison of the wheels in rad/sec
+        // if(Math.Abs(leftWheelW.rpm*0.3f*2*Math.PI/60 - cmdvel_left*0.215f)>=tolerance){
+        //     // leftWheelW.motorTorque = 0.01f*(float)(Math.Round(leftWheelW.rpm,2)*2*Math.PI/60+ cmdvel_left);
+        //     leftWheelW.motorTorque = 0.1f;         }
+        // else leftWheelW.motorTorque = 0.0f;
+        
+        // if(Math.Abs(rightWheelW.rpm*0.3f*2*Math.PI/60 - cmdvel_right*0.215f)>=tolerance){
+        //     // rightWheelW.motorTorque = 0.01f*(float)(Math.Round(rightWheelW.rpm,2)*2*Math.PI/60 + cmdvel_right); 
+        //     rightWheelW.motorTorque = 0.1f;
+        // }
+        // else leftWheelW.motorTorque = 0.0f;             
+        // Debug.Log("real: "+ leftWheelW.rpm*2*Math.PI/60*0.3);
+        // Debug.Log("desired: "+cmdvel_left*0.215f);
+
     }
     
     // void CmsVel_2_Wheels()
@@ -47,23 +65,27 @@ public class CmdVelSub : MonoBehaviour
     //     // cmdvel_right = (float)vel_x/rightWheelW.radius* (float)3.5 - (float)ang_z*(float)1.95;
     // }
 
-    // private void Accelerate()
-    // {
+    private void Accelerate()
+    {
         
-    //     // // velocity comparison of the wheels in rad/sec
-    //     // if(Math.Abs(leftWheelW.rpm*2*Math.PI/60 - cmdvel_left)>=tolerance){
-    //     //     leftWheelW.motorTorque = K_p*(float)(Math.Round(-leftWheelW.rpm,2)*2*Math.PI/60+ cmdvel_left);
+        // // velocity comparison of the wheels in rad/sec
+        // if(Math.Abs(leftWheelW.rpm*0.3f*2*Math.PI/60 - cmdvel_left*0.215f)>=tolerance){
+        //     // leftWheelW.motorTorque = 0.01f*(float)(Math.Round(leftWheelW.rpm,2)*2*Math.PI/60+ cmdvel_left);
+        //     leftWheelW.motorTorque = 0.1f;
 
-    //     // }
+        // }
+        // else leftWheelW.motorTorque = 0.0f;
         
-    //     // if(Math.Abs(rightWheelW.rpm*2*Math.PI/60 - cmdvel_right)>=tolerance){
-    //     //     rightWheelW.motorTorque = K_p*(float)(Math.Round(-rightWheelW.rpm,2)*2*Math.PI/60 + cmdvel_right); 
-
-    //     // }
+        // if(Math.Abs(rightWheelW.rpm*0.3f*2*Math.PI/60 - cmdvel_right*0.215f)>=tolerance){
+        //     // rightWheelW.motorTorque = 0.01f*(float)(Math.Round(rightWheelW.rpm,2)*2*Math.PI/60 + cmdvel_right); 
+        //     rightWheelW.motorTorque = 0.1f;
+        // }
+        // else leftWheelW.motorTorque = 0.0f;
 
          
-    //     // Debug.Log(leftWheelW.rpm);
-    // }
+        // Debug.Log("real: "+ leftWheelW.rpm*2*Math.PI/60*0.3);
+        // Debug.Log("desired: "+cmdvel_left*0.215f);
+    }
 
     private void UpdateWheelPoses() 
     {
@@ -71,11 +93,7 @@ public class CmdVelSub : MonoBehaviour
         UpdateWheelPose(leftWheelW,leftWheelT);
     }
 
-    // private void OnGUI()
-    // {
-    //   print("Real wheel rotation speed :"+leftWheelW.rpm*2*Math.PI/60);
-    //   print("Desired rotation speed :"+cmdvel_left);
-    // }
+
 
     private void UpdateWheelPose(WheelCollider _collider, Transform _transform)
     {
@@ -90,9 +108,7 @@ public class CmdVelSub : MonoBehaviour
 
     private void FixedUpdate()
     {
-        RHtransformer.VelocityOnLeft(rb,_tr, vel_x, vel_y, ang_z);
-
-        
+        Accelerate();
         UpdateWheelPoses();
     }
 

@@ -608,11 +608,10 @@ GameObject:
   - component: {fileID: 437262796716038449}
   - component: {fileID: 437262796716038450}
   - component: {fileID: 437262796716038451}
-  - component: {fileID: 437262796716038455}
   - component: {fileID: 437262796716038454}
   - component: {fileID: 437262796716038453}
   m_Layer: 0
-  m_Name: myrobot2
+  m_Name: myrobot2_article
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -683,19 +682,6 @@ MonoBehaviour:
   rightWheelT: {fileID: 437262796343793347}
   maxSteeringAngle: 1
   motorForce: 1
---- !u!65 &437262796716038455
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 437262796716038348}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: -1, z: 0}
 --- !u!114 &437262796716038454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -727,6 +713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 437262796716038449}
+  _tr: {fileID: 0}
   leftWheelW: {fileID: 437262794975895658}
   rightWheelW: {fileID: 437262795138916192}
   leftWheelT: {fileID: 437262795573322824}

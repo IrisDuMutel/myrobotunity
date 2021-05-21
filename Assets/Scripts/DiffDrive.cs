@@ -32,7 +32,7 @@ public class DiffDrive : MonoBehaviour
 
     private void OnGUI()
     {
-      print("The variable is :"+leftWheelW.rpm);
+    //   print("The variable is :"+leftWheelW.rpm);
     }
 
     private void UpdateWheelPose(WheelCollider _collider, Transform _transform)

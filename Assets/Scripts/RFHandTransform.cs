@@ -57,7 +57,7 @@ public class RFHandTransform : MonoBehaviour
 
         // IN CASE YOU NEED TO FIX THE TRANSFORM
         // _tr.eulerAngles = new Vector3(0.0f,ang_z,0.0f);
-        _tr.position = new Vector3(_tr.position.x,0.5f,_tr.position.z);
+        // _tr.position = new Vector3(_tr.position.x,0.5f,_tr.position.z);
         // // Position
         // _transform.position = new Vector3(pos[0],pos[2],pos[1]);
 

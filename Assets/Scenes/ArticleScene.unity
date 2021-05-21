@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44658828, g: 0.49642313, b: 0.57482547, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -242,6 +242,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!146 &556021714 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 437262794975895658, guid: e3c7f958eb7ddea6f802cd45b6b3d769, type: 3}
+  m_PrefabInstance: {fileID: 437262796249348659}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   labelPos: {x: -180, y: 180, z: 0}
   WheelName: Left Wheel
-  WheelCollider: {fileID: 0}
+  WheelCollider: {fileID: 556021714}
 --- !u!222 &926559431
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -414,8 +419,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a63448e0277be04e83b485b0d71a103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftWheelW: {fileID: 0}
-  rightWheelW: {fileID: 0}
+  leftWheelW: {fileID: 556021714}
+  rightWheelW: {fileID: 1673351803}
 --- !u!114 &926559433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,7 +435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   labelPos: {x: -175, y: 200, z: 0}
   WheelName: Right Wheel
-  WheelCollider: {fileID: 0}
+  WheelCollider: {fileID: 1673351803}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,7 +671,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -15, y: 548}
+  m_AnchoredPosition: {x: -15, y: 300}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1344159881
@@ -707,6 +712,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344159879}
   m_CullTransparentMesh: 1
+--- !u!146 &1673351803 stripped
+WheelCollider:
+  m_CorrespondingSourceObject: {fileID: 437262795138916192, guid: e3c7f958eb7ddea6f802cd45b6b3d769, type: 3}
+  m_PrefabInstance: {fileID: 437262796249348659}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &437262796249348659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -770,10 +780,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 437262796716038451, guid: e3c7f958eb7ddea6f802cd45b6b3d769, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 437262796716038453, guid: e3c7f958eb7ddea6f802cd45b6b3d769, type: 3}
       propertyPath: _tr
       value: 
       objectReference: {fileID: 741303043}
+    - target: {fileID: 437262796716038453, guid: e3c7f958eb7ddea6f802cd45b6b3d769, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 437262796716038453, guid: e3c7f958eb7ddea6f802cd45b6b3d769, type: 3}
+      propertyPath: tolerance
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 437262796716038453, guid: e3c7f958eb7ddea6f802cd45b6b3d769, type: 3}
       propertyPath: RHtransformer
       value: 
@@ -782,5 +804,6 @@ PrefabInstance:
       propertyPath: RFtrans
       value: 
       objectReference: {fileID: 254447506}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 437262796716038455, guid: e3c7f958eb7ddea6f802cd45b6b3d769, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e3c7f958eb7ddea6f802cd45b6b3d769, type: 3}
