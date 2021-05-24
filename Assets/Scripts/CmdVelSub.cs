@@ -12,8 +12,8 @@ public class CmdVelSub : MonoBehaviour
     private float cmdvel_right;
     public Rigidbody rb;
     public Transform _tr;
-    public WheelCollider leftWheelW;
-    public WheelCollider rightWheelW;
+    // public WheelCollider leftWheelW;
+    // public WheelCollider rightWheelW;
     public Transform leftWheelT;
     public Transform rightWheelT;
     private float vel_x;
@@ -41,7 +41,7 @@ public class CmdVelSub : MonoBehaviour
 
        cmdvel_left = vel_x;
        cmdvel_right = vel_y;
-       RHtransformer.VelocityOnLeft(rb,_tr, vel_x, vel_y, ang_z);
+    //    RHtransformer.VelocityOnLeft(rb,_tr, vel_x, vel_y, ang_z);
         // // velocity comparison of the wheels in rad/sec
         // if(Math.Abs(leftWheelW.rpm*0.3f*2*Math.PI/60 - cmdvel_left*0.215f)>=tolerance){
         //     // leftWheelW.motorTorque = 0.01f*(float)(Math.Round(leftWheelW.rpm,2)*2*Math.PI/60+ cmdvel_left);
@@ -89,8 +89,8 @@ public class CmdVelSub : MonoBehaviour
 
     private void UpdateWheelPoses() 
     {
-        UpdateWheelPose(rightWheelW,rightWheelT);
-        UpdateWheelPose(leftWheelW,leftWheelT);
+        // UpdateWheelPose(rightWheelW,rightWheelT);
+        // UpdateWheelPose(leftWheelW,leftWheelT);
     }
 
 
@@ -108,8 +108,10 @@ public class CmdVelSub : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Accelerate();
-        UpdateWheelPoses();
+        // Accelerate();
+        // UpdateWheelPoses();
+        RHtransformer.VelocityOnLeft(rb,_tr, vel_x, vel_y, ang_z);
+
     }
 
 
