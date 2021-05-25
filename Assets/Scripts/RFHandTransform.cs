@@ -53,7 +53,7 @@ public class RFHandTransform : MonoBehaviour
         _rb.angularVelocity = new Vector3(0.0f,-0.0f,0.0f);
         // // Orientation
         _tr.eulerAngles = new Vector3(0.0f,-ang_z*180/Mathf.PI,0.0f);
-        _tr.position = new Vector3(-vel_y, 0.167f, vel_x);
+        _tr.position = new Vector3(-vel_y, 0.1f, vel_x);
 
 
         // IN CASE YOU NEED TO FIX THE TRANSFORM
