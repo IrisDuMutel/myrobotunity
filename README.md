@@ -1,8 +1,9 @@
 # myrobot_unity
 
 This project contains the model and scripts for the simulation of a two-wheeled robot whithin the Unity environment.
+This branch in particular has only a visual part of the robot. The commands of position and velocity can come from MATLAB or any other ROS node. Used for an article
 
-The robot can be moved using the arros or wasd convention. The camera controller can be disabled anytime by removign the tick to the script in 'MainCamera'.
+The robot can be moved using the arros or wasd convention when using the diff_drive script. The camera controller can be disabled anytime by removign the tick to the script in 'MainCamera'.
 
 
 
