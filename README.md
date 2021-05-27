@@ -2,7 +2,9 @@
 
 This project contains the model and scripts for the simulation of a two-wheeled robot whithin the Unity environment.
 
-The robot can be moved using the arros or wasd convention. The camera controller can be disabled anytime by removign the tick to the script in 'MainCamera'.
+This branch is destined to the training of a robot that spawns and moves objects around the scene depending on what he is told. A camera is supposed to send images through an object detection NN and come out with the unity input to populate the scene.
+
+The robot can be moved using the arros or wasd convention when using the diff_drive script. The camera controller can be disabled anytime by removign the tick to the script in 'MainCamera'.
 
 
 
